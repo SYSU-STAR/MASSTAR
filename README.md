@@ -20,7 +20,7 @@
 
 ### Datasets Download
 
-**come soon**
+*Download link*: [Zenodo](https://zenodo.org/record/8416679)
 
 ## ToolChain
 
