@@ -6,22 +6,22 @@
 
 <div align=center><img src="img/head.jpeg" height=90% width=90% ></div>
 
-**Complete video**: [Bilibili](https://www.bilibili.com/video/BV1fy4y1F7Z6/?spm_id_from=333.999.0.0&vd_source=7d9ba13550e9ec24b6bf69d5c3ff3).
+**Complete video**: [Bilibili](https://www.bilibili.com/video/BV1fy4y1F7Z6/?spm_id_from=333.999.0.0&vd_source=7d9ba13550e9ec24b6bf69d5c3ff3), [Youtube](https://www.youtube.com/watch?v=gqIB08ckjoA).
 
 **Authors**: Jinqi Jiang* , Guiyong Zheng*, [Chen Feng*](https://chen-albert-feng.github.io/AlbertFeng.github.io/), [Shaojie Shen](https://uav.hkust.edu.hk/group/), and [Boyu Zhou](http://sysu-star.com/).
 
 **Institutions**: [SYSU STAR Group](http://sysu-star.com/), [HKUST Aerial Robotics Group](https://uav.hkust.edu.hk/), [HIT](http://www.hit.edu.cn/) and [XDU](https://www.xidian.edu.cn/).
 
-## Datasets
+## Dataset
 
-### Datasets Structure
+### Dataset Structure
 
 <div align=center><img src="img/structure.jpg" height=70% width=70% ></div>
 
-### Datasets Download
+### Dataset Download
 
-*Download link*: [Zenodo](https://zenodo.org/record/8416679)
+*Download link*: stored in [Zenodo](https://zenodo.org/record/8416679)
 
 ## ToolChain
 
-**code come soon**
+**Code will come soon**
