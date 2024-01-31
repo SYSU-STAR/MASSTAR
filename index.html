@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MASSTAR: A Multi-Modal Large-Scale Scene Dataset with a Versatile Toolchain for Surface Prediction and Completion</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
+    <script src="js/google-code-prettify/prettify.js"></script> -->
+  </head>
+
+  <!-- cover -->
+  <section>
+    <div class="jumbotron text-center mt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>MASSTAR: A Multi-Modal Large-Scale Scene Dataset with a Versatile Toolchain for Surface Prediction and Completion</h2>
+            <h4 style="color:#5a6268;">Submitted to IROS 2024</h4>
+            <hr>
+            <h6 style="line-height: 26px;">
+              <a href="" target="_blank">Guiyong Zheng</a><sup>1,4,*</sup>,
+              <a href="" target="_blank">Jinqi Jiang</a><sup>1,3,*</sup>,
+              <a href="" target="_blank">Chen Feng</a><sup>2,*</sup>,
+              <a href="" target="_blank">Shaojie Shen</a><sup>2</sup>,
+              <a href="" target="_blank">Boyu Zhou</a><sup>1,†</sup>
+            </h6>
+          <p>
+            <h7 style="line-height: 2px;">
+              <sup>1</sup> Sun Yat-Sen University. &nbsp;&nbsp;
+              <sup>2</sup> The Hong Kong University of Science and Technology. &nbsp;&nbsp;
+              <br>
+              <sup>3</sup> Harbin Institute of Technology. &nbsp;&nbsp;
+              <sup>4</sup> Xidian University. &nbsp;&nbsp;
+              <br>
+            </h7>
+              <sup>*</sup>Equal Contribution &nbsp;&nbsp;
+              <sup>†</sup>Corresponding Authors
+          </p>
+
+          <div class="row justify-content-center">
+            <div class="column">
+                <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/SYSU-STAR/MASSTAR" role="button"  target="_blank">
+                  <i class="fa fa-file"></i> Paper</a> </p>
+            </div>
+            <div class="column">
+                <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/SYSU-STAR/MASSTAR" role="button"  target="_blank">
+                  <i class="fa fa-github-alt"></i> Code </a> </p>
+            </div>
+            <div class="column">
+                <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/SYSU-STAR/MASSTAR" role="button"  target="_blank">
+                  <i class="fa fa-database"></i> Model </a> </p>
+            </div>
+            <!-- <div class="column">
+                <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/SYSU-STAR/MASSTAR" role="button"  target="_blank">
+                  <i class="fa fa-desktop"></i> Demo </a> </p>
+            </div> -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- abstract -->
+  <section>
+    <div class="container">
+        <div class="warp-container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h2>Abstract</h3>
+                <hr style="margin-top:0px">
+                <h6 style="color:#8899a5" class="text-left"> 
+                  We propose a multi-modal dataset composed of plenty of large-scale scene data for 3D surface prediction and completion as well as a versatile and highly automatic toolchain to create such a dataset from 3D models.
+                </h6>
+                  <img src="assets/imgs/head.jpg" alt="Overview" width="90%">
+                  <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                      <source src="video/teaser.mp4" type="video/mp4">
+                  </video> -->
+                  <br>
+                  <br>
+              <p class="text-left">
+                &nbsp;&nbsp;Surface prediction and completion have been widely studied in various applications for diverse downstream tasks. With the development of related research, Surface completion algorithms have been evolving from object-level to scene-level, from virtual scenes to the real world, and from single modality to multi-modality. Current datasets show unsatisfactory performance and a lack of challenge, which hamper the development of this field significantly. In this paper, we propose MASSTAR: a multi-modal large-scale scene dataset with a versatile toolchain for surface prediction and completion. We collect a large amount of scene-level models including part of real-world captured data from a wide range of open-source works. A toolchain is also developed to facilitate processing the data by segmenting the raw 3D data and selecting the valuable model from raw 3D data and generating multi-modal data including RGB image, descriptive text, depth image, and partial point cloud. Additionally, we benchmark different algorithms trained on our dataset. We compared MASSTAR with the current dataset, which validates the superiority of our system.
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <br>
+
+<!-- Method -->
+  <section>
+    <div class="container">
+        <div class="warp-container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h2>Method</h3>
+                <hr style="margin-top:0px">
+                <!-- <h6 style="color:#8899a5" class="text-left"> 
+                  TGS enables fast reconstruction from single-view image. It builds the 3D representation upon a hybrid Triplane-Gaussian representation by evaluating a transformer-based framework, from which 3D Gaussians would be decoded.
+                </h6> -->
+                  <img src="assets/imgs/sam.jpg" alt="Overview" width="90%">
+                  <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                      <source src="video/teaser.mp4" type="video/mp4">
+                  </video> -->
+                  <br>
+                  <br>
+              <p class="text-left">
+                &nbsp;&nbsp; We use an advanced AI model segment anything mobile(SAM)  that has shown excellent performance in segmenting complex and diverse images with the ability to perform panoramic segmentation. The front end applies it to segment the bird-eye view image of the 3D scene. The back end uses the Blender Python to segment the 3D scene according to the boundary returned by the front end.
+                <br>
+                &nbsp;&nbsp; In the automatic segmentation method, since SAM does not have the semantic information of the scene, we will inevitably encounter some non-architectural structures (such as roads, trees, etc.). In consideration of improving the segmentation quality, we use contrastive language-image pre-training model(CLIP) to remove these non-architectural structures. CLIP is a multi-modal pre-training model. It uses more detailed image text descriptions, which can help vision encoder learn better visual features with stronger generalization capabilities. We first use SAMto segment all the scenes and use CLIP to judge whether it belongs to the building through the image rendered by the scene, to filter out the non-architectural structures.
+                <br>
+                &nbsp;&nbsp; In the manual segmentation method, users have the option to select the desired area either by using a rectangle tool in the bird-eye view or by clicking on the segmented area identified by SAM. This enables them to directly access the corresponding detailed 3D scene.
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <br>
+
+
+  <section>
+    <div class="container">
+        <div class="warp-container">
+          <div class="row">
+            <div class="col-12 text-center">
+                <h2>Benchmark</h2>
+                <hr style="margin-top:0px">
+                <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                    <source src="video/gso_comparison.mp4" type="video/mp4">
+                </video> -->
+                <img src="assets/imgs/result2.jpg" alt="ablation-representation" width="100%">
+                <br>
+                <p class="text-center">
+                   result 
+                </p>
+                <br>
+                <img src="assets/imgs/ROC.jpg" alt="ablation-representation" width="100%">
+                <p class="text-center">
+                 the ouput .
+                </p>
+                <br>
+            </div>
+        </div>
+        </div>
+    </div>
+  </section>
+  <br>
+
+  <!-- <section>
+    <div class="container">
+        <div class="warp-container">
+          <div class="row">
+            <div class="col-12 text-center">
+                <h2>Benchmark results</h2>
+                <hr style="margin-top:0px">
+                <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                    <source src="video/more_gso.mp4" type="video/mp4">
+                <img src="assets/imgs/result2.jpg" alt="ablation-representation" width="100%">
+                </video>
+                <p class="text-center">
+                  More results from GSO dataset.
+                </p>
+                <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                    <source src="video/more_gen.mp4" type="video/mp4">
+                </video>
+                <p class="text-center">
+                  More results from generated images.
+                </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section> -->
+  <!-- <br> -->
+
+  <!-- <section>
+    <div class="container">
+        <div class="warp-container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h2>Ablation</h2>
+              <hr style="margin-top:0px">
+              <img src="assets/imgs/result2.jpg" alt="ablation-representation" width="100%">
+              <p class="text-center">
+                Qualitative comparison between different 3D representations: (1) naive generalizable 3D Gaussian (3DG), (2) Triplane-NeRF and (3) Triplane-Guassian.
+              </p>
+              <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="video/ab.mp4" type="video/mp4">
+              </video>
+              <img src="assets/imgs/plot_result2.jpg" alt="ablation-method" width="100%">
+              <p class="text-center">
+                Ablation experiments to assess the effect of Projection-aware Condition (P.C.) and Geometry-aware Encoding (G.E.).
+              </p>
+            </div>
+        </div>
+        </div>
+    </div>
+  </section>
+  <br> -->
+
+  <!-- citing -->
+  <div class="container">
+    <div class="warp-container">
+    <div class="row">
+      <div class="col-12">
+          <h3>Citation</h3>
+          <hr style="margin-top:0px">
+              <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
+<code>@article{,
+    title={MASSTAR: A Multi-Modal Large-Scale Scene Dataset with a Versatile Toolchain for Surface Prediction and Completion},
+    author={Guiyong Zheng, Jinqi Jiang, Chen Feng, Shaojie Shen, Boyu Zhou},
+    journal={},
+    year={2024}
+}</code></pre>
+          <hr>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <footer class="text-center" style="margin-bottom:10px">
+    This website is adapted from <a href="https://liuyuan-pal.github.io/SyncDreamer/" target="_blank">SyncDreamer</a>.
+  </footer>
+
+</body>
+</html>
