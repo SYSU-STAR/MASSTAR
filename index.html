@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-12">
             <h2>MASSTAR: A Multi-Modal Large-Scale Scene Dataset with a Versatile Toolchain for Surface Prediction and Completion</h2>
-            <h4 style="color:#5a6268;">Submitted to IROS 2024</h4>
+            <h5 style="color:#5a6268;">Submitted to IROS 2024</h5>
             <hr>
             <h6 style="line-height: 26px;">
               <a href="" target="_blank">Guiyong Zheng</a><sup>1,4,*</sup>,
@@ -56,7 +56,7 @@
             </div>
             <div class="column">
                 <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/SYSU-STAR/MASSTAR" role="button"  target="_blank">
-                  <i class="fa fa-database"></i> Model </a> </p>
+                  <i class="fa fa-database"></i> Datasets </a> </p>
             </div>
             <!-- <div class="column">
                 <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/SYSU-STAR/MASSTAR" role="button"  target="_blank">
@@ -76,26 +76,30 @@
         <div class="warp-container">
           <div class="row">
             <div class="col-12 text-center">
-              <h2>Abstract</h3>
+              <h4>Abstract</h4>
                 <hr style="margin-top:0px">
                 <h6 style="color:#8899a5" class="text-left"> 
-                  We propose a multi-modal dataset composed of plenty of large-scale scene data for 3D surface prediction and completion as well as a versatile and highly automatic toolchain to create such a dataset from 3D models.
+                  We propose <strong>MASSTAR</strong>, a <strong>m</strong>ulti-modal l<strong>a</strong>rge-scale <strong>s</strong>cene dataset with a ver<strong>s</strong>atile <strong>t</strong>oolchain for surf<strong>a</strong>ce p<strong>r</strong>ediction and completion. 
                 </h6>
-                  <img src="assets/imgs/head.jpg" alt="Overview" width="90%">
+                  <img src="assets/imgs/head_new.jpg" alt="Overview" width="70%">
                   <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
                       <source src="video/teaser.mp4" type="video/mp4">
                   </video> -->
                   <br>
                   <br>
               <p class="text-left">
-                &nbsp;&nbsp;Surface prediction and completion have been widely studied in various applications for diverse downstream tasks. With the development of related research, Surface completion algorithms have been evolving from object-level to scene-level, from virtual scenes to the real world, and from single modality to multi-modality. Current datasets show unsatisfactory performance and a lack of challenge, which hamper the development of this field significantly. In this paper, we propose MASSTAR: a multi-modal large-scale scene dataset with a versatile toolchain for surface prediction and completion. We collect a large amount of scene-level models including part of real-world captured data from a wide range of open-source works. A toolchain is also developed to facilitate processing the data by segmenting the raw 3D data and selecting the valuable model from raw 3D data and generating multi-modal data including RGB image, descriptive text, depth image, and partial point cloud. Additionally, we benchmark different algorithms trained on our dataset. We compared MASSTAR with the current dataset, which validates the superiority of our system.
+                <strong>
+                &nbsp;&nbsp;Surface prediction and completion have been widely studied in various applications for diverse downstream tasks. With the development of related research, surface completion algorithms have been evolving from object-level to scene-level, from virtual scenes to the real world, and from single modality to multi-modality. Current datasets exhibit unsatisfactory performance and a lack of challenge since they do not cater to the trends of research, significantly impeding the development of this field. In this paper, 
+                We developed a versatile toolchain to facilitate processing the data by segmenting the raw 3D data, selecting the valuable model from the raw 3D data, and generating multi-modal data, including RGB images, descriptive texts, depth images, and partial point clouds. Then we created an example dataset using the toolchain with a large number of collected scene-level models, including portions of real-world captured data from a wide range of open-source projects.
+                Additionally, we benchmarked different surface completion algorithms trained on our dataset and gave a comprehensive result. We compared MASSTAR with the current dataset, which validates the superiority of our dataset-toolchain system.
+              </strong>
               </p>
             </div>
           </div>
         </div>
     </div>
   </section>
-  <br>
+  <!-- <br> -->
 
 <!-- Method -->
   <section>
@@ -103,30 +107,58 @@
         <div class="warp-container">
           <div class="row">
             <div class="col-12 text-center">
-              <h2>Method</h3>
+              <h4>Multi-modal Dataset Generation Toolchain</h4>
                 <hr style="margin-top:0px">
                 <!-- <h6 style="color:#8899a5" class="text-left"> 
                   TGS enables fast reconstruction from single-view image. It builds the 3D representation upon a hybrid Triplane-Gaussian representation by evaluating a transformer-based framework, from which 3D Gaussians would be decoded.
                 </h6> -->
-                  <img src="assets/imgs/sam.jpg" alt="Overview" width="90%">
+                
+                <h5  class="text-center"> 
+                  A. 3D Scene Segmentation
+                </h5>
+                <img src="assets/imgs/sam_new.jpg" alt="Overview" width="75%">
+                <br><br>
+                <p class="text-left">
+                  An Overview of 3D Raw Data Segmentation. Initially, we generate the depth image and RGB image by rendering a bird's-eye view of the scene. Users have the option to employ SAM for segmenting top-view images through manual selection or fully automated methods. Subsequently, the 3D model is sliced using Blender Python, and CLIP is utilized to filter out non-architectural categories.
+                </p>
+                <!-- <br> -->
+
+                <h5  class="text-center"> 
+                  B. Images Rendering
+                </h5>
+                <img src="assets/imgs/render.jpg" alt="Overview" width="60%">
+                <br><br>
+                <p class="text-left">
+                  An example of the image rendering part of the toolchain. We offer the random mode (left) and trajectory mode (right) for users to choose from.
+                </p>
+
+                <h5  class="text-center"> 
+                  C. Descriptive Texts
+                </h5>
+                <img src="assets/imgs/text.jpg" alt="Overview" width="60%">
+                <br><br>
+                <p class="text-left">
+                  An example of the descriptive text render part of toolchain. we utilize BLIP to perform zero-shot image-to-text generation.
+                </p>
+                <br>
                   <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
                       <source src="video/teaser.mp4" type="video/mp4">
                   </video> -->
-                  <br>
-                  <br>
-              <p class="text-left">
+
+              <!-- <p class="text-left">
                 &nbsp;&nbsp; We use an advanced AI model segment anything mobile(SAM)  that has shown excellent performance in segmenting complex and diverse images with the ability to perform panoramic segmentation. The front end applies it to segment the bird-eye view image of the 3D scene. The back end uses the Blender Python to segment the 3D scene according to the boundary returned by the front end.
                 <br>
                 &nbsp;&nbsp; In the automatic segmentation method, since SAM does not have the semantic information of the scene, we will inevitably encounter some non-architectural structures (such as roads, trees, etc.). In consideration of improving the segmentation quality, we use contrastive language-image pre-training model(CLIP) to remove these non-architectural structures. CLIP is a multi-modal pre-training model. It uses more detailed image text descriptions, which can help vision encoder learn better visual features with stronger generalization capabilities. We first use SAMto segment all the scenes and use CLIP to judge whether it belongs to the building through the image rendered by the scene, to filter out the non-architectural structures.
                 <br>
                 &nbsp;&nbsp; In the manual segmentation method, users have the option to select the desired area either by using a rectangle tool in the bird-eye view or by clicking on the segmented area identified by SAM. This enables them to directly access the corresponding detailed 3D scene.
-              </p>
+              </p> -->
+
             </div>
           </div>
         </div>
     </div>
   </section>
-  <br>
+  <!-- <br> -->
 
 
   <section>
@@ -134,22 +166,25 @@
         <div class="warp-container">
           <div class="row">
             <div class="col-12 text-center">
-                <h2>Benchmark</h2>
+                <h4>Surface Completion Benchmark</h4>
                 <hr style="margin-top:0px">
                 <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
                     <source src="video/gso_comparison.mp4" type="video/mp4">
                 </video> -->
-                <img src="assets/imgs/result2.jpg" alt="ablation-representation" width="100%">
+                <!-- <h6 style="color:#8899a5" class="text-left"> 
+                  We propose MASSTAR, a multi-modal large-scale scene dataset with a versatile toolchain for surface prediction and completion.
+                </h6> -->
+                <img src="assets/imgs/result.gif" alt="ablation-representation" width="90%">
                 <br>
                 <p class="text-center">
                    result 
                 </p>
                 <br>
-                <img src="assets/imgs/ROC.jpg" alt="ablation-representation" width="100%">
+                <!-- <img src="assets/imgs/table.png" alt="ablation-representation" width="100%">
                 <p class="text-center">
                  the ouput .
                 </p>
-                <br>
+                <br> -->
             </div>
         </div>
         </div>
