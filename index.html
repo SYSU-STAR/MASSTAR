@@ -93,9 +93,9 @@
                   <br>
               <p class="text-left">
                 <strong>
-                &nbsp;&nbsp;Surface prediction and completion have been widely studied in various applications for diverse downstream tasks. With the development of related research, surface completion algorithms have been evolving from object-level to scene-level, from virtual scenes to the real world, and from single modality to multi-modality. Current datasets exhibit unsatisfactory performance and a lack of challenge since they do not cater to the trends of research, significantly impeding the development of this field. In this paper, 
-                we developed a versatile toolchain to facilitate processing the data by segmenting the raw 3D data, selecting the valuable model from the raw 3D data, and generating multi-modal data, including RGB images, descriptive texts, depth images, and partial point clouds. Then we created an example dataset using the toolchain with a large number of collected scene-level models, including portions of real-world captured data from a wide range of open-source projects.
-                Additionally, we benchmarked different surface completion algorithms trained on our dataset and gave a comprehensive result. We compared MASSTAR with the current dataset, which validates the superiority of our dataset-toolchain system.
+                  &nbsp;&nbsp;Surface prediction and completion have been widely studied in various applications.Recently, the scope of research in surface completion technology has gradually shifted from solely focusing on simple small-scale objects to more complex large-scale scenes. As a result, researchers have begun increasing the volume of data and leveraging a greater variety of data modalities including rendered RGB images, descriptive text, depth images, etc, to enhance algorithm performance. However, existing datasets suffer from a deficiency in the amounts of scene-level models along with the corresponding multi-modal information. Therefore, a method to scale the datasets and generate multi-modal information in them efficiently is essential.
+                  To bridge this research gap, we propose <strong>MASSTAR</strong>, a <strong>m</strong>ulti-modal l<strong>a</strong>rge-scale <strong>s</strong>cene dataset with a ver<strong>s</strong>atile <strong>t</strong>oolchain for surf<strong>a</strong>ce p<strong>r</strong>ediction and completion. We develop a versatile and efficient toolchain for processing the raw 3D data from the environments. It screens out a set of fine-grained scene models and generates the corresponding multi-modal data. Utilizing the toolchain, we then generate an example dataset composed of over a thousand scene-level models with partial real-world data added.
+                  We compare MASSTAR with the existing datasets, which validates its superiority: the ability to efficiently extract high-quality models from complex scenarios to expand the dataset. Additionally, several representative surface completion algorithms are benchmarked on MASSTAR, which reveals that existing algorithms can hardly deal with scene-level completion. We release the source code of our toolchain and the dataset.
               </strong>
               </p>
             </div>
@@ -105,73 +105,103 @@
   </section>
   <!-- <br> -->
 
-<!-- Method -->
-  <section>
-    <div class="container">
-        <div class="warp-container">
-          <div class="row">
-            <div class="col-12 text-center">
-              <h4>Multi-modal Dataset Generation Toolchain</h4>
-                <hr style="margin-top:0px">
-                <!-- <h6 style="color:#8899a5" class="text-left"> 
-                  TGS enables fast reconstruction from single-view image. It builds the 3D representation upon a hybrid Triplane-Gaussian representation by evaluating a transformer-based framework, from which 3D Gaussians would be decoded.
-                </h6> -->
-                
-                <h5  class="text-center"> 
-                  A. 3D Scene Segmentation
-                </h5>
-                <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/sam_new.jpg" alt="Overview" width="75%">
-                <br><br>
-                <p class="text-left">
-                  An Overview of 3D Raw Data Segmentation. Initially, we generate the depth image and RGB image by rendering a bird's-eye view of the scene. Users have the option to employ SAM for segmenting top-view images through manual selection or fully automated methods. Subsequently, the 3D model is sliced using Blender Python, and CLIP is utilized to filter out non-architectural categories.
-                </p>
-                <!-- <br> -->
 
-                <h5  class="text-center"> 
-                  B. Images Rendering
-                </h5>
-                <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/render.jpg" alt="Overview" width="75%">
-                <br><br>
-                <p class="text-left">
-                  An example of the image rendering part of the toolchain. We offer the random mode (left) and trajectory mode (right) for users to choose from.
-                </p>
 
-                <h5  class="text-center"> 
-                  C. Descriptive Texts
-                </h5>
-                <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/text_new.jpg" alt="Overview" width="75%">
-                <br><br>
-                <p class="text-left">
-                  An example of the descriptive text rendering part of the toolchain. We utilize BLIP to perform zero-shot image-to-text generation.
-                </p>
+<!-- toolChain example -->
+<section>
+  <div class="container">
+      <div class="warp-container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h4>Multi-modal Dataset Generation Toolchain</h4>
+              <hr style="margin-top:0px">
+              <!-- <h6 style="color:#8899a5" class="text-left"> 
+                TGS enables fast reconstruction from single-view image. It builds the 3D representation upon a hybrid Triplane-Gaussian representation by evaluating a transformer-based framework, from which 3D Gaussians would be decoded.
+              </h6> -->
+              
+              <h5  class="text-center"> 
+                A. 3D Scene Segmentation
+              </h5>
+              <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/sam_new.jpg" alt="Overview" width="75%">
+              <br><br>
+              <p class="text-left">
+                An Overview of 3D Raw Data Segmentation. Initially, we generate the depth image and RGB image by rendering a bird's-eye view of the scene. Users have the option to employ SAM for segmenting top-view images in manual mode or automatic mode. Subsequently, the 3D model is sliced using Blender, and then CLIP is utilized to filter out non-architectural categories.
+              </p>
+              <!-- <br> -->
 
-                <h5  class="text-center"> 
-                  D. Partial Point Cloud
-                </h5>
-                <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/partial_gif.gif" alt="Overview" width="75%">
-                <br><br>
-                <p class="text-left">
-                  An example of the partial point cloud render part of the toolchain.
-                </p>
-                <!-- <br> -->
-                  <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                      <source src="video/teaser.mp4" type="video/mp4">
-                  </video> -->
+              <h5  class="text-center"> 
+                B. Images Rendering
+              </h5>
+              <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/render.jpg" alt="Overview" width="75%">
+              <br><br>
+              <p class="text-left">
+                An example of the image rendering part of the toolchain. We offer the random mode (left) and trajectory mode (right) for users.
+              </p>
 
-              <!-- <p class="text-left">
-                &nbsp;&nbsp; We use an advanced AI model segment anything mobile(SAM)  that has shown excellent performance in segmenting complex and diverse images with the ability to perform panoramic segmentation. The front end applies it to segment the bird-eye view image of the 3D scene. The back end uses the Blender Python to segment the 3D scene according to the boundary returned by the front end.
-                <br>
-                &nbsp;&nbsp; In the automatic segmentation method, since SAM does not have the semantic information of the scene, we will inevitably encounter some non-architectural structures (such as roads, trees, etc.). In consideration of improving the segmentation quality, we use contrastive language-image pre-training model(CLIP) to remove these non-architectural structures. CLIP is a multi-modal pre-training model. It uses more detailed image text descriptions, which can help vision encoder learn better visual features with stronger generalization capabilities. We first use SAMto segment all the scenes and use CLIP to judge whether it belongs to the building through the image rendered by the scene, to filter out the non-architectural structures.
-                <br>
-                &nbsp;&nbsp; In the manual segmentation method, users have the option to select the desired area either by using a rectangle tool in the bird-eye view or by clicking on the segmented area identified by SAM. This enables them to directly access the corresponding detailed 3D scene.
-              </p> -->
+              <h5  class="text-center"> 
+                C. Descriptive Texts
+              </h5>
+              <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/text_new.jpg" alt="Overview" width="75%">
+              <br><br>
+              <p class="text-left">
+                An example of the descriptive text rendering part of the toolchain. BLIP is employed to perform zero-shot image-to-text generation.
+              </p>
 
-            </div>
+              <h5  class="text-center"> 
+                D. Partial Point Cloud
+              </h5>
+              <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/partial_gif.gif" alt="Overview" width="75%">
+              <br><br>
+              <p class="text-left">
+                An example of the partial point cloud render part of the toolchain.
+              </p>
+              <!-- <br> -->
+                <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                    <source src="video/teaser.mp4" type="video/mp4">
+                </video> -->
+
+            <!-- <p class="text-left">
+              &nbsp;&nbsp; We use an advanced AI model segment anything mobile(SAM)  that has shown excellent performance in segmenting complex and diverse images with the ability to perform panoramic segmentation. The front end applies it to segment the bird-eye view image of the 3D scene. The back end uses the Blender Python to segment the 3D scene according to the boundary returned by the front end.
+              <br>
+              &nbsp;&nbsp; In the automatic segmentation method, since SAM does not have the semantic information of the scene, we will inevitably encounter some non-architectural structures (such as roads, trees, etc.). In consideration of improving the segmentation quality, we use contrastive language-image pre-training model(CLIP) to remove these non-architectural structures. CLIP is a multi-modal pre-training model. It uses more detailed image text descriptions, which can help vision encoder learn better visual features with stronger generalization capabilities. We first use SAMto segment all the scenes and use CLIP to judge whether it belongs to the building through the image rendered by the scene, to filter out the non-architectural structures.
+              <br>
+              &nbsp;&nbsp; In the manual segmentation method, users have the option to select the desired area either by using a rectangle tool in the bird-eye view or by clicking on the segmented area identified by SAM. This enables them to directly access the corresponding detailed 3D scene.
+            </p> -->
+
           </div>
         </div>
-    </div>
-  </section>
-  <!-- <br> -->
+      </div>
+  </div>
+</section>
+<!-- <br> -->
+
+<!-- Method -->
+<section>
+  <div class="container">
+      <div class="warp-container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h4>Toolchain Tested on Existing Datasets</h4>
+              <hr style="margin-top:0px">
+              <!-- <h6 style="color:#8899a5" class="text-left"> 
+                TGS enables fast reconstruction from single-view image. It builds the 3D representation upon a hybrid Triplane-Gaussian representation by evaluating a transformer-based framework, from which 3D Gaussians would be decoded.
+              </h6> -->
+<!--                 
+              <h5  class="text-center"> 
+                A. 3D Scene Segmentation
+              </h5> -->
+              <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/toolchain_example.jpg" alt="Overview" width="85%">
+              <br><br>
+              <p class="text-left">
+                Some examples of independent data processing using the proposed toolchain on the existing datasets.
+              </p>
+
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+<!-- <br> -->
 
   <section>
     <div class="container">
@@ -217,7 +247,7 @@
                 <h6 style="color:#8899a5" class="text-left"> 
                   We conducted a comparative analysis of three surface prediction and completion algorithms, including SPM, PCN, and XMFnet.
                 </h6>
-                <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/result.gif" alt="ablation-representation" width="99%">
+                <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/result.jpg" alt="ablation-representation" width="99%">
                 <!-- <br>
                 <p class="text-center">
                    result 
