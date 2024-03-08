@@ -93,10 +93,10 @@
                   <br>
               <p class="text-left">
                 <strong>
-                  &nbsp;&nbsp;Surface prediction and completion have been widely studied in various applications.Recently, the scope of research in surface completion technology has gradually shifted from solely focusing on simple small-scale objects to more complex large-scale scenes. As a result, researchers have begun increasing the volume of data and leveraging a greater variety of data modalities including rendered RGB images, descriptive text, depth images, etc, to enhance algorithm performance. However, existing datasets suffer from a deficiency in the amounts of scene-level models along with the corresponding multi-modal information. Therefore, a method to scale the datasets and generate multi-modal information in them efficiently is essential.
-                  To bridge this research gap, we propose <strong>MASSTAR</strong>, a <strong>m</strong>ulti-modal l<strong>a</strong>rge-scale <strong>s</strong>cene dataset with a ver<strong>s</strong>atile <strong>t</strong>oolchain for surf<strong>a</strong>ce p<strong>r</strong>ediction and completion. We develop a versatile and efficient toolchain for processing the raw 3D data from the environments. It screens out a set of fine-grained scene models and generates the corresponding multi-modal data. Utilizing the toolchain, we then generate an example dataset composed of over a thousand scene-level models with partial real-world data added.
-                  We compare MASSTAR with the existing datasets, which validates its superiority: the ability to efficiently extract high-quality models from complex scenarios to expand the dataset. Additionally, several representative surface completion algorithms are benchmarked on MASSTAR, which reveals that existing algorithms can hardly deal with scene-level completion. We release the source code of our toolchain and the dataset.
-              </strong>
+                  Surface prediction and completion have been widely studied in various applications. Recently, research in surface completion has evolved from small objects to complex large-scale scenes. As a result, researchers have begun increasing the volume of data and leveraging a greater variety of data modalities including rendered RGB images, descriptive text, depth images, etc, to enhance algorithm performance. However, existing datasets suffer from a deficiency in the amounts of scene-level models along with the corresponding multi-modal information. Therefore, a method to scale the datasets and generate multi-modal information in them efficiently is essential.
+                  To bridge this research gap, we propose MASSTAR: a multi-modal large-scale scene dataset with a versatile toolchain for surface prediction and completion. We develop a versatile and efficient toolchain for processing the raw 3D data from the environments. It screens out a set of fine-grained scene models and generates the corresponding multi-modal data. Utilizing the toolchain, we then generate an example dataset composed of over a thousand scene-level models with partial real-world data added.
+                  We compare MASSTAR with the existing datasets, which validates its superiority: the ability to efficiently extract high-quality models from complex scenarios to expand the dataset. Additionally, several representative surface completion algorithms are benchmarked on MASSTAR, which reveals that existing algorithms can hardly deal with scene-level completion.
+                </strong>
               </p>
             </div>
           </div>
@@ -125,7 +125,7 @@
               <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/sam_new.jpg" alt="Overview" width="75%">
               <br><br>
               <p class="text-center">
-                An Overview of 3D Raw Data Segmentation. Initially, we generate the depth image and RGB image by rendering a bird's-eye view of the scene. Users have the option to employ SAM for segmenting top-view images in manual mode or automatic mode. Subsequently, the 3D model is sliced using Blender, and then CLIP is utilized to filter out non-architectural categories.
+                An overview of 3D scene segmentation. Initially, we generate the depth image and RGB image by rendering a bird's-eye view of each scene. Users have the option to employ SAM\cite{kirillov2023segany} for segmenting top-view images in manual mode or automatic mode. Subsequently, the 3D mesh model is sliced using Blender, and then CLIP is utilized to filter out non-architectural categories.
               </p>
               <!-- <br> -->
 
@@ -150,7 +150,7 @@
               <h5  class="text-center"> 
                 D. Partial Point Cloud
               </h5>
-              <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/partial_gif.gif" alt="Overview" width="75%">
+              <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/partial_gif.gif" alt="Overview" width="85%">
               <br>
               <p class="text-center">
                 An example of the partial point cloud render part of the toolchain.
@@ -190,7 +190,7 @@
               <h5  class="text-center"> 
                 A. 3D Scene Segmentation
               </h5> -->
-              <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/toolchain_example.jpg" alt="Overview" width="100%">
+              <img src="https://raw.githubusercontent.com/SYSU-STAR/MASSTAR/gh_page/assets/imgs/toolchain_example.gif" alt="Overview" width="100%">
               <br><br>
               <p class="text-center">
                 Some examples of independent data processing using the proposed toolchain on the existing datasets.
