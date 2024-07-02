@@ -1,6 +1,6 @@
 <div align="center">
     <h2>MASSTAR: A Multi-Modal Large-Scale Scene Dataset with a Versatile Toolchain for Surface Prediction and Completion</h2>
-    <strong>Submitted to IROS 2024</strong>
+    <strong>Tech Report, 2024.</strong>
     <br>
         <a href="http://sysu-star.com/people/" target="_blank">Guiyong Zheng</a><sup>1,4,*</sup>,
         <a href="" target="_blank">Jinqi Jiang</a><sup>1,3,*</sup>,
